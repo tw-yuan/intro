@@ -4,8 +4,33 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Yuan | 個人簡介</title>
+	<title>Yuan | 網路技術愛好者與工程師</title>
+	<meta name="description" content="Yuan 是來自臺灣的網路技術愛好者與工程師，專注於網路架構、BGP、資安與系統維運。現任職於 NCSE Network 及 CDNCloud，熱愛參與各類資訊社群與開源活動。">
+	<meta name="keywords" content="Yuan, 網路工程師, BGP, 資安, 系統維運, NCSE Network, CDNCloud, 臺灣, 資訊社群">
+	<meta name="author" content="Yuan">
+	<meta name="robots" content="index, follow">
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://yuan-tw.net/">
+	<meta property="og:title" content="Yuan | 網路技術愛好者與工程師">
+	<meta property="og:description" content="來自臺灣的網路技術愛好者與工程師，專注於網路架構、BGP、資安與系統維運。">
+	<meta property="og:image" content="https://yuan-tw.net/images/2.jfif">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://yuan-tw.net/">
+	<meta property="twitter:title" content="Yuan | 網路技術愛好者與工程師">
+	<meta property="twitter:description" content="來自臺灣的網路技術愛好者與工程師，專注於網路架構、BGP、資安與系統維運。">
+	<meta property="twitter:image" content="https://yuan-tw.net/images/2.jfif">
+
+	<!-- Canonical URL -->
+	<link rel="canonical" href="https://yuan-tw.net/">
+
+	<!-- Favicon -->
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="apple-touch-icon" href="images/2.jfif">
+
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
@@ -402,10 +427,46 @@
 			min-width: 0;
 			word-break: break-word;
 		}
+
+		#vsc-initialized {
+			display: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			height: 0 !important;
+		}
 	</style>
 </head>
 
 <body>
+	<!-- 結構化資料 -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Yuan",
+		"url": "https://yuan-tw.net",
+		"image": "https://yuan-tw.net/images/2.jfif",
+		"sameAs": [
+			"https://github.com/tw-yuan",
+			"https://www.linkedin.com/in/yuan-tw",
+			"https://instagram.com/yuan_net",
+			"https://blog.yuan-tw.net/"
+		],
+		"jobTitle": "Network Engineer",
+		"worksFor": [
+			{
+				"@type": "Organization",
+				"name": "NCSE Network"
+			},
+			{
+				"@type": "Organization",
+				"name": "CDNCloud"
+			}
+		],
+		"description": "來自臺灣的網路技術愛好者與工程師，專注於網路架構、BGP、資安與系統維運。"
+	}
+	</script>
+
 	<!-- 英雄區塊 -->
 	<section class="hero-section">
 		<div class="container">
@@ -707,7 +768,7 @@
 								<a href="https://discord.gg/RMpeHxqQB4" class="friend-link" target="_blank">
 									<div class="friend-link-card">
 										<i class="fab fa-discord"></i>
-										<span>個人 Discord 伺服器</span>
+										<span>個人 DC 伺服器</span>
 									</div>
 								</a>
 							</div>
