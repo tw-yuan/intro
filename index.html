@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="vscode-initialized" content="true">
 	<title>Yuan | 網路技術愛好者與工程師</title>
 	<meta name="description" content="Yuan 是來自臺灣的網路技術愛好者與工程師，專注於網路架構、BGP、資安與系統維運。現任職於 NCSE Network 及 CDNCloud，熱愛參與各類資訊社群與開源活動。">
 	<meta name="keywords" content="Yuan, 網路工程師, BGP, 資安, 系統維運, NCSE Network, CDNCloud, 臺灣, 資訊社群">
@@ -50,6 +51,19 @@
 			overflow-x: hidden;
 			width: 100%;
 			height: 100%;
+			position: relative;
+		}
+
+		body {
+			font-family: 'Noto Sans TC', sans-serif;
+			background-color: var(--bg-color);
+			color: var(--text-color);
+			line-height: 1.6;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			min-height: 100vh;
+			overflow-x: hidden;
 		}
 
 		:root {
@@ -66,17 +80,6 @@
 			--section-bg-4: #ffffff;
 			--section-bg-5: #f8f9fa;
 			--section-bg-6: #ffffff;
-		}
-
-		body {
-			font-family: 'Noto Sans TC', sans-serif;
-			background-color: var(--bg-color);
-			color: var(--text-color);
-			line-height: 1.6;
-			margin: 0;
-			padding: 0;
-			position: relative;
-			min-height: 100vh;
 		}
 
 		.hero-section {
@@ -432,14 +435,16 @@
 
 		#vsc-initialized {
 			display: none !important;
-			margin: 0 !important;
-			padding: 0 !important;
-			height: 0 !important;
 		}
 	</style>
 </head>
 
 <body>
+	<style>
+		#vsc-initialized {
+			display: none !important;
+		}
+	</style>
 	<!-- 結構化資料 -->
 	<script type="application/ld+json">
 	{
@@ -800,8 +805,7 @@
 							<div class="col-md-3 col-6">
 								<a href="#contact" class="friend-link">
 									<div class="friend-link-card">
-										<i class="fas fa-user-plus"></i>
-										<span>歡迎聯絡我加入！</span>
+										<span>聯絡我就可以出現在這！</span>
 									</div>
 								</a>
 							</div>
