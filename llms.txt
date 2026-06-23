@@ -28,6 +28,8 @@ Yuan is strongest at the intersection of network operations, security education 
 - AI agent development, n8n workflow automation, RAG, document-understanding tools, and Moodle or campus AI integrations.
 - Internal tools, Discord bots, APIs, data processing systems, and operations tooling.
 
+Yuan is open to conversations about roles related to network engineering, infrastructure, security platforms, and AI automation, such as Network Engineer, SRE, Security Platform Engineer, AI Automation Engineer, or Forward Deployed Engineer.
+
 ## Areas of Expertise
 
 ### Network Architecture and Governance
