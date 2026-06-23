@@ -79,11 +79,8 @@ function makeActivityLabel(item) {
   return details ? `${item.title} — ${details}` : item.title;
 }
 
-function makeCategoryItem(item, index) {
+function makeCategoryItem(item) {
   const li = document.createElement("li");
-  if (index >= 3) {
-    li.className = "fade-preview-item";
-  }
   appendText(li, makeActivityLabel(item));
   if (item.url) {
     appendText(li, " ");
@@ -129,8 +126,8 @@ function renderWork(items) {
 
 function renderCategoryItems(list, items) {
   clearElement(list);
-  items.forEach((item, index) => {
-    list.appendChild(makeCategoryItem(item, index));
+  items.forEach((item) => {
+    list.appendChild(makeCategoryItem(item));
   });
 }
 
@@ -172,10 +169,19 @@ function renderCategories(items, categories, settings) {
     }
 
     let expanded = false;
+    const visibleCount = Number(settings.community_default_visible_count || 3);
+    const explicitlyCollapsed = categoryItems
+      .filter((item) => item.show_when_collapsed)
+      .sort(byNumber("featured_rank"));
     const featured = categoryItems
       .filter((item) => item.is_featured)
       .sort(byNumber("featured_rank"));
-    const collapsedItems = featured.length > 0 ? featured : categoryItems.slice(0, 3);
+    const collapsedSource = explicitlyCollapsed.length > 0
+      ? explicitlyCollapsed
+      : featured.length > 0
+        ? featured
+        : categoryItems;
+    const collapsedItems = collapsedSource.slice(0, visibleCount);
     const update = () => {
       section.dataset.expanded = String(expanded);
       renderCategoryItems(list, expanded ? categoryItems : collapsedItems);
