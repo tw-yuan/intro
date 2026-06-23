@@ -33,36 +33,6 @@ const fallbackData = {
       sort_order: 3006,
     },
     {
-      section: "project",
-      title: "LearnAI - 多使用者 AI 學習輔助平台",
-      url: "https://github.com/tw-yuan/niu-code-1142-project",
-      case_rank: 1,
-      case_study: {
-        problem: "學習者需要能把課程資料、文件與提問流程集中在同一個 AI 輔助環境。",
-        role: "負責規劃產品流程、前後端整合、AI 功能串接與資料處理流程。",
-        stack: "AI application, RAG, document processing, web application",
-        outcome: "將 AI 問答、文件理解與多使用者學習情境整理成可操作的平台型專案。",
-      },
-      is_featured: true,
-      featured_rank: 1,
-      sort_order: 6028,
-    },
-    {
-      section: "project",
-      title: "bgpq3 Web API",
-      url: "https://github.com/tw-yuan/bgpq3-web-api",
-      case_rank: 2,
-      case_study: {
-        problem: "網路維運工具若只能在命令列使用，不利於串接內部系統或自動化流程。",
-        role: "把 bgpq3 工具服務化，設計 API 介面供其他流程呼叫。",
-        stack: "BGP tooling, Web API, network automation",
-        outcome: "讓路由與 prefix-list 產生流程能以 API 方式被重複使用。",
-      },
-      is_featured: true,
-      featured_rank: 2,
-      sort_order: 6034,
-    },
-    {
       section: "talk",
       title: "SITCON 學生計算機年會一小時玩程式",
       role: "總總召、總召、助教",
@@ -125,62 +95,6 @@ function makeCategoryItem(item, index) {
     li.appendChild(link);
   }
   return li;
-}
-
-function appendDefinition(parent, term, description) {
-  const row = document.createElement("div");
-  const dt = document.createElement("dt");
-  const dd = document.createElement("dd");
-  appendText(dt, term);
-  appendText(dd, description);
-  row.append(dt, dd);
-  parent.appendChild(row);
-}
-
-function renderProjectCases(items, settings) {
-  const container = document.querySelector("#project-case-list");
-  if (!container) return;
-
-  const limit = Number(settings.featured_project_count || 4);
-  const projects = items
-    .filter((item) => item.section === "project" && item.case_study)
-    .sort(byNumber("case_rank"))
-    .slice(0, limit);
-
-  if (projects.length === 0) return;
-
-  clearElement(container);
-  projects.forEach((item) => {
-    const article = document.createElement("article");
-    article.className = "case-card";
-
-    const header = document.createElement("div");
-    header.className = "case-card-header";
-    const label = document.createElement("p");
-    label.className = "card-label";
-    appendText(label, item.case_study.stack || "Project");
-    const title = document.createElement("h3");
-    appendText(title, item.title);
-    header.append(label, title);
-
-    const points = document.createElement("dl");
-    points.className = "case-points";
-    appendDefinition(points, "問題", item.case_study.problem || "");
-    appendDefinition(points, "角色", item.case_study.role || "");
-    appendDefinition(points, "技術", item.case_study.stack || "");
-    appendDefinition(points, "成果", item.case_study.outcome || "");
-
-    article.append(header, points);
-    if (item.url) {
-      const link = document.createElement("a");
-      link.className = "text-link";
-      link.href = item.url;
-      link.rel = "noopener noreferrer";
-      appendText(link, "查看專案");
-      article.appendChild(link);
-    }
-    container.appendChild(article);
-  });
 }
 
 function renderWork(items) {
@@ -316,6 +230,5 @@ async function loadData() {
 document.addEventListener("DOMContentLoaded", async () => {
   const data = await loadData();
   renderWork(data.experiences || []);
-  renderProjectCases(data.experiences || [], data.settings || {});
   renderCategories(data.experiences || [], data.categories || [], data.settings || {});
 });

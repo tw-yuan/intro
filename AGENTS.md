@@ -22,8 +22,8 @@
 
 - `index.html`：唯一主要頁面，包含語意 HTML、SEO metadata、Open Graph、JSON-LD
 - `assets/css/site.css`：所有網站樣式與 RWD 規則
-- `assets/js/site.js`：讀取 `data/experiences.json`，渲染工作經歷、代表專案案例、活動經歷與展開互動
-- `data/experiences.json`：前端使用的經歷資料與代表專案案例來源
+- `assets/js/site.js`：讀取 `data/experiences.json`，渲染工作經歷、活動經歷與展開互動
+- `data/experiences.json`：前端使用的經歷資料來源
 - `llms.txt`：給 AI 與自動化工具讀取的純文字摘要
 - `robots.txt`：crawler policy
 - `sitemap.xml`：站點索引

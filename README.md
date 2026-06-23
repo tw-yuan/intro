@@ -1,6 +1,6 @@
 # Yuan 個人網站
 
-這是 [yuan-tw.net](https://yuan-tw.net/) 的靜態個人網站，用來整理 Yuan 的自我介紹、核心能力、工作經歷、代表專案、社群活動、適合聯絡情境與公開聯絡方式。
+這是 [yuan-tw.net](https://yuan-tw.net/) 的靜態個人網站，用來整理 Yuan 的自我介紹、核心能力、工作經歷、專案、社群活動與公開聯絡方式。
 
 ## 技術棧
 
@@ -23,8 +23,8 @@ python3 -m http.server 8080
 
 - `index.html`：首頁與結構化資料
 - `assets/css/site.css`：網站樣式與 RWD
-- `assets/js/site.js`：讀取 JSON 並渲染工作經歷、代表專案案例、活動經歷與展開互動
-- `data/experiences.json`：前端實際讀取的經歷資料與代表專案案例資料
+- `assets/js/site.js`：讀取 JSON 並渲染工作經歷、活動經歷與展開互動
+- `data/experiences.json`：前端實際讀取的經歷資料
 - `llms.txt`：AI 與自動化工具友善摘要
 - `robots.txt`：搜尋引擎爬蟲設定
 - `sitemap.xml`：網站地圖

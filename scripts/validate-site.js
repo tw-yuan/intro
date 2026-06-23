@@ -80,10 +80,6 @@ function validateExperiences(data) {
   const currentRoles = data.experiences.filter((item) => item.section === "work" && item.end_date === "present");
   assert(currentRoles.some((item) => item.title === "NCSE Network"), "Current roles must include NCSE Network");
   assert(currentRoles.some((item) => item.title === "諾科雲有限公司"), "Current roles must include 諾科雲有限公司");
-  assert(
-    data.experiences.filter((item) => item.section === "project" && item.case_study).length >= 3,
-    "At least three project case studies are required",
-  );
 }
 
 function validateHtml() {
@@ -91,8 +87,6 @@ function validateHtml() {
   const requiredSnippets = [
     "諾科雲有限公司",
     "NCSE Network Founder",
-    "代表專案",
-    "適合",
     "/data/experiences.json",
     "application/ld+json",
     "og:image:alt",
