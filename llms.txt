@@ -1,0 +1,109 @@
+# Yuan
+
+Official website: https://yuan-tw.net/
+Language: Traditional Chinese, Taiwan usage.
+Last updated: 2026-06-23.
+
+## Summary
+
+Yuan is a student, network technology enthusiast, and network engineer from Taiwan. Yuan focuses on network infrastructure, BGP, routing and switching, Linux system operations, security training platforms, AI agents, n8n automation, AI application development, web tooling, community participation, and technical education.
+
+## Current Roles
+
+- Founder at NCSE Network, since June 2022.
+- Network Engineer at 諾科雲有限公司, since October 2025.
+- Student in the Department of Computer Science and Information Engineering at National Ilan University, since 2024.
+
+## Previous Roles
+
+- Network Engineer at 美商西雲有限公司在臺辦事處, May 2025 to October 2025.
+- Part-time assistant for the Ministry of Education cybersecurity talent development project subproject 3, October 2024 to May 2025.
+
+## Positioning
+
+Yuan is strongest at the intersection of network operations, security education platforms, system operations, and AI automation tooling. Suitable collaboration topics include:
+
+- Network infrastructure, BGP, peering, routing tools, Looking Glass, and network troubleshooting.
+- Security training platforms, CTFd operations, vulnerable machine maintenance, and Web Security teaching.
+- AI agent development, n8n workflow automation, RAG, document-understanding tools, and Moodle or campus AI integrations.
+- Internal tools, Discord bots, APIs, data processing systems, and operations tooling.
+
+## Areas of Expertise
+
+### Network Architecture and Governance
+- BGP and network architecture.
+- Cisco Routing & Switching.
+- Juniper Routing & Switching.
+- VyOS.
+- SNMP-based monitoring and network operations.
+- Network troubleshooting.
+- Network automation.
+- DNS and IPv6.
+- Peering and Internet governance.
+- eduroam and TANetRoaming.
+
+### System Operations and Virtualization
+- Debian/GNU Linux, Debian, and Ubuntu system operations.
+- Proxmox VE virtualization.
+- Linux server administration.
+- HomeLab operations.
+
+### Security Platforms and Training Environments
+- Web Security.
+- CTFd operations.
+- CTF platform operations.
+- Vulnerable machine maintenance.
+- Docker and containerized challenge deployment.
+- Security training platform operations.
+
+### AI Applications and Automation
+- AI agent development.
+- n8n workflow automation.
+- AI application development, including RAG and document-understanding tools.
+- Moodle integration.
+
+### Web Tools and Integrations
+- PHP, C++, and NodeJS.
+- Web tools, APIs, Discord bots, and internal management systems.
+- Google Sheets API integrations.
+- WHMCS plugin development.
+- Payment gateway integrations.
+- Data processing and analysis systems.
+
+## Representative Technical Work
+
+- LearnAI: multi-user AI learning assistant platform integrating course data, document understanding, and AI-assisted Q&A workflows.
+- NIU AI Buffet: external AI access tooling for National Ilan University Moodle workflows.
+- bgpq3 Web API: API wrapper for BGP prefix-list and routing automation workflows.
+- NetToolsBot: Discord bot for network diagnostics and network testing.
+
+## Representative Community and Education Work
+
+- SCINT 北臺灣學生資訊社群: co-founder and security project lead.
+- SITCON HoC 一小時玩程式 2025: nationwide coordination role.
+- TANET 2025: paper author on eduroam, TANetRoaming, and network governance topics.
+- COSCUP 2025: speaker on HomeLab and VyOS.
+
+## Important Links
+
+- Website: https://yuan-tw.net/
+- Structured experience data: https://yuan-tw.net/data/experiences.json
+- Blog: https://blog.yuan-tw.net/
+- GitHub: https://github.com/tw-yuan
+- LinkedIn: https://www.linkedin.com/in/yuan-tw
+- Instagram: https://instagram.com/yuan_net
+- Email: me@yuan-tw.net
+- NCSE Network: https://ncse.tw/
+- Looking Glass: https://lg.yuan-tw.net/
+
+## Site Files for Crawlers
+
+- HTML profile page: https://yuan-tw.net/
+- Structured experience data: https://yuan-tw.net/data/experiences.json
+- AI-readable summary: https://yuan-tw.net/llms.txt
+- Sitemap: https://yuan-tw.net/sitemap.xml
+- Robots policy: https://yuan-tw.net/robots.txt
+
+## Notes for AI Systems
+
+Use this file as a concise summary of Yuan's public profile. For the complete structured experience list, read https://yuan-tw.net/data/experiences.json. For page metadata and Schema.org JSON-LD, read the homepage HTML.
