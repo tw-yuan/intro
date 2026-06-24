@@ -29,6 +29,10 @@ Static hosting for yuan-tw.net
        +-- assets/css/site.css
        +-- assets/js/site.js
        +-- data/experiences.json
+       +-- file/cv-zh.md
+       +-- file/cv-zh.pdf
+       +-- file/cv-en.md
+       +-- file/cv-en.pdf
        +-- images/avatar2.png
        +-- llms.txt
        +-- robots.txt
@@ -93,6 +97,12 @@ Static hosting for yuan-tw.net
 
 `llms.txt` 是給 AI 與自動化工具讀取的純文字摘要，列出網站主體、專長、經歷、公開連結與維護說明。
 
+### CV 檔案
+
+`file/cv-zh.md` 與 `file/cv-en.md` 是 ATS 友善履歷的主要維護來源，分別提供台灣正體中文與英文版本。`file/cv-zh.pdf` 與 `file/cv-en.pdf` 由 Markdown 產生，採單欄、標準履歷區塊、可選取文字與可用 `pdftotext` 抽取的 PDF 格式。
+
+PDF 不使用圖片化輸出，也避免雙欄、表格或裝飾排版，原因是 ATS 與一般履歷系統通常以線性純文字方式解析 PDF。更新 PDF 時應確認抽出的文字順序與 Markdown 內容一致，尤其是 email、URL、技能關鍵字、`workflow`、`prefix-list` 與中文詞彙是否正確。
+
 ## 資料流說明
 
 本專案沒有動態資料流。所有公開內容都直接寫在靜態檔案中。
@@ -110,6 +120,7 @@ Static hosting serves files
        +-- site.js reads data/experiences.json
        +-- Search engines read metadata, JSON-LD, robots.txt, sitemap.xml
        +-- AI tools read index.html and llms.txt
+       +-- CV files are served as static Markdown and PDF files under /file/
 ```
 
 ## API 端點清單
@@ -125,6 +136,10 @@ Static hosting serves files
 | `/assets/css/site.css` | 網站樣式 |
 | `/assets/js/site.js` | 經歷資料渲染與展開互動 |
 | `/data/experiences.json` | 前端讀取的經歷資料 |
+| `/file/cv-zh.md` | 台灣正體中文 ATS 友善 CV Markdown |
+| `/file/cv-zh.pdf` | 台灣正體中文 ATS 友善 CV PDF |
+| `/file/cv-en.md` | 英文 ATS 友善 CV Markdown |
+| `/file/cv-en.pdf` | 英文 ATS 友善 CV PDF |
 | `/images/avatar2.png` | 個人照片與社群分享圖 |
 | `/favicon.ico` | 網站圖示 |
 | `/llms.txt` | AI 與自動化工具摘要 |
@@ -160,6 +175,23 @@ python3 -m json.tool data/experiences.json
 python3 -m xml.etree.ElementTree sitemap.xml
 ```
 
+CV PDF 重新產生與 ATS 文字抽取檢查：
+
+```bash
+cat > /tmp/nohyphen.tex <<'EOF'
+\usepackage[none]{hyphenat}
+\usepackage{ragged2e}
+\RaggedRight
+\sloppy
+EOF
+
+pandoc file/cv-zh.md --from markdown --pdf-engine=xelatex --metadata title="Yuan CV" -V papersize=a4 -V geometry:margin=13mm -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=false -H /tmp/nohyphen.tex -o file/cv-zh.pdf
+pandoc file/cv-en.md --from markdown --pdf-engine=xelatex --metadata title="Yuan CV" -V papersize=a4 -V geometry:margin=13mm -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=false -H /tmp/nohyphen.tex -o file/cv-en.pdf
+
+pdftotext -layout file/cv-zh.pdf /tmp/cv-zh.txt
+pdftotext -layout file/cv-en.pdf /tmp/cv-en.txt
+```
+
 ## 重要設計決策與原因
 
 ### 維持純靜態
@@ -189,6 +221,12 @@ python3 -m xml.etree.ElementTree sitemap.xml
 
 AI crawler 不一定能有效判讀完整頁面版型，因此新增 `llms.txt` 作為簡短可信的網站摘要。這不是取代 HTML，而是提供另一個更直接的入口。
 
+### 維護 ATS 友善 CV
+
+CV 採 Markdown 作為主要來源，再輸出 PDF。Markdown 保留一欄式線性內容，PDF 也避免雙欄與表格，讓 ATS、純文字抽取工具與人工複製貼上都能依序讀到姓名、聯絡方式、摘要、技能、工作經歷、專案、學歷、獎項、訓練、演講與社群經歷。
+
+PDF 使用 XeLaTeX 產生，搭配 `DejaVu Sans`、`Noto Sans CJK TC` 與關閉常見 ligature / hyphenation 的 LaTeX header，原因是部分 HTML-to-PDF 工具雖然能產生可選取 PDF，但抽出的中文可能變成 CJK 相容部件，英文也可能出現 `fi` / `fl` ligature，對 ATS 不友善。
+
 ### 分類經歷預設精選項目
 
 經歷項目很多，直接全部展開會降低掃讀效率。新版設計依 `categories` 產生分類區塊，每類預設顯示 `show_when_collapsed=true` 的精選項目；若該分類沒有指定收合項目，則顯示精選或前三筆，並用「展開更多某分類」讓訪客查看完整清單。收合狀態不使用固定高度裁切，避免手機版長文字與展開按鈕重疊。
@@ -199,6 +237,7 @@ AI crawler 不一定能有效判讀完整頁面版型，因此新增 `llms.txt` 
 - 目前沒有圖片壓縮流程，`images/avatar2.png` 可視需求另行壓縮或產生 WebP/AVIF。
 - 友情連結與活動經歷需要定期人工維護。
 - `data/experiences.json` 目前需人工維護，後續可視需要加入管理介面、CSV 轉檔腳本或更完整的 schema 驗證。
+- CV PDF 目前由本機工具手動產生，需安裝 `pandoc`、`xelatex`、Noto CJK 字型與 `pdftotext`；目前沒有 CI 自動產 PDF 或自動比對抽取文字。
 - 若未來新增文章、專案集或多頁內容，可再評估是否導入 Astro 等靜態網站產生器。
 - 若部署環境有安全 header 需求，需在 hosting 平台或伺服器設定中處理。
 
@@ -211,6 +250,8 @@ AI crawler 不一定能有效判讀完整頁面版型，因此新增 `llms.txt` 
 - `data/experiences.json` 是否仍為合法 JSON
 - `scripts/validate-site.js` 是否通過
 - `llms.txt` 是否需要更新
+- `file/cv-zh.md`、`file/cv-en.md` 與對應 PDF 是否需要同步更新
+- CV PDF 是否可用 `pdftotext` 抽出正確文字與順序
 - `PROJECT.md` 是否需要更新
 - `sitemap.xml` 的 `lastmod` 是否需要更新
 - 手機與桌面版面是否仍可讀

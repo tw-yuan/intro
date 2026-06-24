@@ -25,6 +25,8 @@ python3 -m http.server 8080
 - `assets/css/site.css`：網站樣式與 RWD
 - `assets/js/site.js`：讀取 JSON 並渲染工作經歷、活動經歷與展開互動
 - `data/experiences.json`：前端實際讀取的經歷資料
+- `file/cv-zh.md`、`file/cv-zh.pdf`：台灣正體中文 ATS 友善 CV
+- `file/cv-en.md`、`file/cv-en.pdf`：英文 ATS 友善 CV
 - `llms.txt`：AI 與自動化工具友善摘要
 - `robots.txt`：搜尋引擎爬蟲設定
 - `sitemap.xml`：網站地圖
@@ -40,6 +42,23 @@ python3 -m http.server 8080
 node scripts/validate-site.js
 python3 -m json.tool data/experiences.json
 python3 -m xml.etree.ElementTree sitemap.xml
+```
+
+若更新 `file/cv-zh.md` 或 `file/cv-en.md`，PDF 應使用可保留純文字抽取順序的 XeLaTeX 流程重新產生，並用 `pdftotext` 檢查 ATS 可讀內容：
+
+```bash
+cat > /tmp/nohyphen.tex <<'EOF'
+\usepackage[none]{hyphenat}
+\usepackage{ragged2e}
+\RaggedRight
+\sloppy
+EOF
+
+pandoc file/cv-zh.md --from markdown --pdf-engine=xelatex --metadata title="Yuan CV" -V papersize=a4 -V geometry:margin=13mm -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=false -H /tmp/nohyphen.tex -o file/cv-zh.pdf
+pandoc file/cv-en.md --from markdown --pdf-engine=xelatex --metadata title="Yuan CV" -V papersize=a4 -V geometry:margin=13mm -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=false -H /tmp/nohyphen.tex -o file/cv-en.pdf
+
+pdftotext -layout file/cv-zh.pdf /tmp/cv-zh.txt
+pdftotext -layout file/cv-en.pdf /tmp/cv-en.txt
 ```
 
 若要用瀏覽器確認版面，可再啟動本機靜態伺服器：
