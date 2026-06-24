@@ -47,15 +47,8 @@ python3 -m xml.etree.ElementTree sitemap.xml
 若更新 `file/cv-zh.md` 或 `file/cv-en.md`，PDF 應使用可保留純文字抽取順序的 XeLaTeX 流程重新產生，並用 `pdftotext` 檢查 ATS 可讀內容：
 
 ```bash
-cat > /tmp/nohyphen.tex <<'EOF'
-\usepackage[none]{hyphenat}
-\usepackage{ragged2e}
-\RaggedRight
-\sloppy
-EOF
-
-pandoc file/cv-zh.md --from markdown --pdf-engine=xelatex --metadata title="Yuan CV" -V papersize=a4 -V geometry:margin=13mm -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=false -H /tmp/nohyphen.tex -o file/cv-zh.pdf
-pandoc file/cv-en.md --from markdown --pdf-engine=xelatex --metadata title="Yuan CV" -V papersize=a4 -V geometry:margin=13mm -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=false -H /tmp/nohyphen.tex -o file/cv-en.pdf
+pandoc file/cv-zh.md --from markdown --pdf-engine=xelatex -V papersize=a4 -V geometry:margin=12mm -V fontsize=10pt -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=true -H file/cv-style.tex -o file/cv-zh.pdf
+pandoc file/cv-en.md --from markdown --pdf-engine=xelatex -V papersize=a4 -V geometry:margin=12mm -V fontsize=10pt -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=true -H file/cv-style.tex -o file/cv-en.pdf
 
 pdftotext -layout file/cv-zh.pdf /tmp/cv-zh.txt
 pdftotext -layout file/cv-en.pdf /tmp/cv-en.txt

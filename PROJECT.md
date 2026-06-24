@@ -178,15 +178,8 @@ python3 -m xml.etree.ElementTree sitemap.xml
 CV PDF 重新產生與 ATS 文字抽取檢查：
 
 ```bash
-cat > /tmp/nohyphen.tex <<'EOF'
-\usepackage[none]{hyphenat}
-\usepackage{ragged2e}
-\RaggedRight
-\sloppy
-EOF
-
-pandoc file/cv-zh.md --from markdown --pdf-engine=xelatex --metadata title="Yuan CV" -V papersize=a4 -V geometry:margin=13mm -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=false -H /tmp/nohyphen.tex -o file/cv-zh.pdf
-pandoc file/cv-en.md --from markdown --pdf-engine=xelatex --metadata title="Yuan CV" -V papersize=a4 -V geometry:margin=13mm -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=false -H /tmp/nohyphen.tex -o file/cv-en.pdf
+pandoc file/cv-zh.md --from markdown --pdf-engine=xelatex -V papersize=a4 -V geometry:margin=12mm -V fontsize=10pt -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=true -H file/cv-style.tex -o file/cv-zh.pdf
+pandoc file/cv-en.md --from markdown --pdf-engine=xelatex -V papersize=a4 -V geometry:margin=12mm -V fontsize=10pt -V mainfont="DejaVu Sans" -V CJKmainfont="Noto Sans CJK TC" -V monofont="DejaVu Sans Mono" -V mainfontoptions="Ligatures=NoCommon" -V colorlinks=true -H file/cv-style.tex -o file/cv-en.pdf
 
 pdftotext -layout file/cv-zh.pdf /tmp/cv-zh.txt
 pdftotext -layout file/cv-en.pdf /tmp/cv-en.txt
@@ -225,7 +218,7 @@ AI crawler 不一定能有效判讀完整頁面版型，因此新增 `llms.txt` 
 
 CV 採 Markdown 作為主要來源，再輸出 PDF。Markdown 保留一欄式線性內容，PDF 也避免雙欄與表格，讓 ATS、純文字抽取工具與人工複製貼上都能依序讀到姓名、聯絡方式、摘要、技能、工作經歷、專案、學歷、獎項、訓練、演講與社群經歷。
 
-PDF 使用 XeLaTeX 產生，搭配 `DejaVu Sans`、`Noto Sans CJK TC` 與關閉常見 ligature / hyphenation 的 LaTeX header，原因是部分 HTML-to-PDF 工具雖然能產生可選取 PDF，但抽出的中文可能變成 CJK 相容部件，英文也可能出現 `fi` / `fl` ligature，對 ATS 不友善。
+PDF 使用 XeLaTeX 產生，搭配 `DejaVu Sans`、`Noto Sans CJK TC` 與 `file/cv-style.tex` 中關閉常見 ligature / hyphenation 的 LaTeX header，原因是部分 HTML-to-PDF 工具雖然能產生可選取 PDF，但抽出的中文可能變成 CJK 相容部件，英文也可能出現 `fi` / `fl` ligature，對 ATS 不友善。
 
 ### 分類經歷預設精選項目
 
