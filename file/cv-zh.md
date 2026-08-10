@@ -123,6 +123,9 @@ GitHub: https://github.com/tw-yuan/NodeJS-NetToolsBot
 ## 訓練
 
 - AIS3 好厲駭第十屆高階培訓，進行中。
+- AIS3 Junior 2026，助教。
+- AIS3 TOUR 一日資安體驗營 2026 北部場，助教。
+- AIS3 TOUR 一日資安體驗營 2026 中部場，助教。
 - APNIC - TWNOG 7.0 IPv6 Workshop，結業。
 - 數位發展部 DNS 公共政策研習營，學員。
 - AIS3 好厲駭第九屆高階培訓，結業。
@@ -142,8 +145,8 @@ GitHub: https://github.com/tw-yuan/NodeJS-NetToolsBot
 - TANET 2025 - eduroam 及 TANetRoaming 與國際趨勢比較。
 - AIS3 東區資安體驗營 2026 - Web Security。
 - SITCON 2026 閃電講 - SITCON 文組 x AI Agent。
-- 一日資安體驗營 2026 東部場 - Web Security。
-- 一日資安體驗營 2026 南部場 - AI Security。
+- AIS3 TOUR 一日資安體驗營 2026 東部場 - Web Security。
+- AIS3 TOUR 一日資安體驗營 2026 南部場 - AI Security。
 - 教育部跨領域資通訊安全人才培育計畫 2025 全國資安社團暨社群幹部研習營 - 社群經營經驗分享。
 - SCINT 2025 基礎能力課程 - 網路的除錯大法。
 - SCINT 2025 基礎能力課程 - 防火牆認識與實作。
@@ -160,6 +163,7 @@ GitHub: https://github.com/tw-yuan/NodeJS-NetToolsBot
 - TANET 2025 - 稿件作者。
 - THJCC 臺灣高中資安聯合競賽 - 第一屆網管、第二屆總召、第三屆網管。
 - SCINT 聯合程式競賽第一屆 - 總召。
+- SITCON 學生計算機年會 2027 - 行政組長與編輯組員。
 - SITCON Camp 夏令營 2026 - 編輯組副組長。
 - SITCON 學生計算機年會 2026 - 編輯組副組長。
 - SITCON 學生計算機年會 2024 - 議程組員與場務組機動股長。
