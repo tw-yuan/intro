@@ -123,9 +123,9 @@ GitHub: https://github.com/tw-yuan/NodeJS-NetToolsBot
 ## Training
 
 - AIS3 Advanced Training, 10th cohort - ongoing.
-- AIS3 Junior 2026 - teaching assistant.
-- AIS3 TOUR One-Day Cybersecurity Experience Camp 2026 North Taiwan - teaching assistant.
-- AIS3 TOUR One-Day Cybersecurity Experience Camp 2026 Central Taiwan - teaching assistant.
+- Ministry of Education Cybersecurity Talent Development Project - AIS3 Junior 2026 - teaching assistant.
+- Ministry of Education Cybersecurity Talent Development Project - AIS3 TOUR One-Day Cybersecurity Experience Camp 2026 North Taiwan - teaching assistant.
+- Ministry of Education Cybersecurity Talent Development Project - AIS3 TOUR One-Day Cybersecurity Experience Camp 2026 Central Taiwan - teaching assistant.
 - APNIC - TWNOG 7.0 IPv6 Workshop - completed.
 - Ministry of Digital Affairs DNS Public Policy Workshop - participant.
 - AIS3 Advanced Training, 9th cohort - completed.
@@ -143,10 +143,10 @@ GitHub: https://github.com/tw-yuan/NodeJS-NetToolsBot
 
 - COSCUP 2025 - HomeLab from networking: introductory VyOS tutorial for Linux users.
 - TANET 2025 - eduroam, TANetRoaming, and international trend comparison.
-- AIS3 East Taiwan Cybersecurity Experience Camp 2026 - Web Security.
+- Ministry of Education Cybersecurity Talent Development Project - AIS3 East Taiwan Cybersecurity Experience Camp 2026 - Web Security.
 - SITCON 2026 Lightning Talk - Liberal arts, SITCON, and AI Agent.
-- AIS3 TOUR One-Day Cybersecurity Experience Camp 2026 East Taiwan - Web Security.
-- AIS3 TOUR One-Day Cybersecurity Experience Camp 2026 South Taiwan - AI Security.
+- Ministry of Education Cybersecurity Talent Development Project - AIS3 TOUR One-Day Cybersecurity Experience Camp 2026 East Taiwan - Web Security.
+- Ministry of Education Cybersecurity Talent Development Project - AIS3 TOUR One-Day Cybersecurity Experience Camp 2026 South Taiwan - AI Security.
 - Ministry of Education Cross-Disciplinary ICT Security Talent Development Program 2025 National Cybersecurity Club and Community Cadre Camp - community operations experience sharing.
 - SCINT 2025 Basic Skills Course - network debugging methods.
 - SCINT 2025 Basic Skills Course - firewall concepts and hands-on practice.
