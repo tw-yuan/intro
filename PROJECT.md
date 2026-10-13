@@ -99,7 +99,7 @@ Static hosting for yuan-tw.net
 
 ### CV 檔案
 
-`file/cv-zh.md` 與 `file/cv-en.md` 是 ATS 友善履歷的主要維護來源，分別提供台灣正體中文與英文版本。`file/cv-zh.pdf` 與 `file/cv-en.pdf` 由 Markdown 產生，採單欄、標準履歷區塊、可選取文字與可用 `pdftotext` 抽取的 PDF 格式。
+`file/cv-zh.md` 與 `file/cv-en.md` 是 ATS 友善履歷的主要維護來源，分別提供台灣正體中文與英文版本。`file/cv-zh.pdf` 與 `file/cv-en.pdf` 由 Markdown 產生，採單欄、標準履歷區塊、可選取文字與可用 `pdftotext` 抽取的 PDF 格式。首頁聯絡方式段落的求職說明下方提供兩份 PDF 的連結，`llms.txt` 的 Important Links 也列出相同網址。
 
 PDF 不使用圖片化輸出，也避免雙欄、表格或裝飾排版，原因是 ATS 與一般履歷系統通常以線性純文字方式解析 PDF。更新 PDF 時應確認抽出的文字順序與 Markdown 內容一致，尤其是 email、URL、技能關鍵字、`workflow`、`prefix-list` 與中文詞彙是否正確。
 

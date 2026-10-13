@@ -91,6 +91,8 @@ Yuan is open to conversations about roles related to network engineering, infras
 
 - Website: https://yuan-tw.net/
 - Structured experience data: https://yuan-tw.net/data/experiences.json
+- CV (Traditional Chinese, PDF): https://yuan-tw.net/file/cv-zh.pdf
+- CV (English, PDF): https://yuan-tw.net/file/cv-en.pdf
 - Blog: https://blog.yuan-tw.net/
 - GitHub: https://github.com/tw-yuan
 - LinkedIn: https://www.linkedin.com/in/yuan-tw
