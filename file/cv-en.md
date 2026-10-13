@@ -41,6 +41,13 @@ Student, network technology enthusiast, and network engineer from Taiwan with ex
 - Assist with network architecture improvements, network troubleshooting, and operations tooling.
 - Work across infrastructure, network operations, process automation, and operations workflow tooling.
 
+### National Ilan University, Higher Education Sprout Project (Cybersecurity Program) - Contract Staff
+
+2026/11 - Present
+
+- Assist with vulnerability discovery and security testing of university information systems.
+- Document identified security issues and report them to the responsible units to help strengthen campus system security.
+
 ### 美商西雲有限公司在臺辦事處 - Network Engineer
 
 2025/05 - 2025/10

@@ -1,6 +1,6 @@
 {
   "settings": {
-    "data_version": "2026-08-10",
+    "data_version": "2026-10-13",
     "community_default_visible_count": 3,
     "community_expand_label": "展開更多",
     "community_collapse_label": "收合",
@@ -161,6 +161,25 @@
       "url": "",
       "is_featured": true,
       "featured_rank": 2,
+      "show_when_collapsed": true
+    },
+    {
+      "sort_order": 3096,
+      "id": "work-096",
+      "section": "work",
+      "display_group": "工作經歷",
+      "expand_group": "work",
+      "title": "國立宜蘭大學 高教深耕計畫-資安專章",
+      "organization": "國立宜蘭大學",
+      "role": "約用人員",
+      "start_date": "2026-11",
+      "end_date": "present",
+      "date_label": "2026/11 ~ present",
+      "year_sort": 2026,
+      "description": "協助校內資訊系統進行漏洞查找與弱點檢測，彙整發現的資安問題並通報相關單位，協助提升校園系統安全。",
+      "url": "",
+      "is_featured": true,
+      "featured_rank": 3,
       "show_when_collapsed": true
     },
     {

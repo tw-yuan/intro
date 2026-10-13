@@ -2,7 +2,7 @@
 
 Official website: https://yuan-tw.net/
 Language: Traditional Chinese, Taiwan usage.
-Last updated: 2026-08-10.
+Last updated: 2026-10-13.
 
 ## Summary
 
@@ -12,6 +12,7 @@ Yuan is a student, network technology enthusiast, and network engineer from Taiw
 
 - Founder at NCSE Network, since June 2022.
 - Network Engineer at 諾科雲有限公司, since October 2025.
+- Contract staff for the Higher Education Sprout Project cybersecurity program (高教深耕計畫-資安專章) at National Ilan University, since November 2026.
 - Student in the Department of Computer Science and Information Engineering at National Ilan University, since 2024.
 
 ## Previous Roles
