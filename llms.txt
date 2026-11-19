@@ -96,6 +96,7 @@ Yuan is open to conversations about roles related to network engineering, infras
 - Blog: https://blog.yuan-tw.net/
 - GitHub: https://github.com/tw-yuan
 - LinkedIn: https://www.linkedin.com/in/yuan-tw
+- ORCID: https://orcid.org/0009-0005-8601-2102
 - Instagram: https://instagram.com/yuan_net
 - Email: me@yuan-tw.net
 - NCSE Network: https://ncse.tw/
